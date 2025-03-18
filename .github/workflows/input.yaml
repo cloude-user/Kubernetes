@@ -14,6 +14,18 @@ jobs:
       - name: Show the trigger
         run: echo "I've been triggered by a(n) ${{ github.event_name }} event."
 
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
       - name: display the input
         run: |
           echo "User entered: ${{ github.event.inputs.user_input }}"
+
+      - name: Install Python
+        run: |
+          sudo apt-get update
+          sudo apt-get install python3
+
+      - name: Run Python Script with User Input
+        run: |
+          python3 script.py ${{ github.event.inputs.user_input }}
