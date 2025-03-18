@@ -15,9 +15,9 @@ spec:
         app: mongodb
     spec:
       containers:
-        - name: mongo-db  # Corrected (removed extra `-`)
-          image: mongo    # Corrected indentation
-          env:            # Environment variables start here
+        - name: mongo-db
+          image: mongo
+          env:
             - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
                 secretKeyRef:
